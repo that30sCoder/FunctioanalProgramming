@@ -16,6 +16,8 @@ public class Main {
                 new Person("Alex", MALE)
         );
 
+
+
        Predicate<Person> personPredicate = person -> FEMALE.equals(person.gender);
         List<Person> females2 = people.stream()
                 .filter(person -> FEMALE.equals(person.gender))
