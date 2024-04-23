@@ -45,6 +45,7 @@ public class SinglyLinkedList {
                     currentNode.next = nodeToInsert;
                     nodeToInsert.next = null;
                     break;
+
                 }
             }
         }
