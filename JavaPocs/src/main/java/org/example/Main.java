@@ -1,23 +1,22 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 
 class Main {
     public static void main(String[] args) throws InterruptedException{
 
-       /* Thread t1 = new Thread(new PrintThreads(Boolean.TRUE));
+        /*Thread t1 = new Thread(new PrintThreads(Boolean.TRUE));
         t1.setName("EvenThread");
         Thread t2 = new Thread(new PrintThreads(Boolean.FALSE));
         t2.setName("OddThread");
         t2.start();
         t1.start();
 
-        */
+         */
+
+
 
         List<Employee> employeeList = new ArrayList<Employee>();
 
@@ -38,25 +37,10 @@ class Main {
         employeeList.add(new Employee(255, "Ali Baig", 23, "Male", "Infrastructure", 2018, 12700.0));
         employeeList.add(new Employee(266, "Sanvi Pandey", 26, "Female", "Product Development", 2015, 28900.0));
         employeeList.add(new Employee(277, "Anuj Chettiar", 31, "Male", "Product Development", 2012, 35700.0));
-       /* System.out.printf("Number of male and female employees" +
-                employeeList.stream().collect(Collectors.groupingBy(employee -> employee.getGender(),Collectors.counting()))
-                );
+     //Male and female employees
 
-        */
-
-/*        System.out.printf("All departments are" + employeeList.stream().map(Employee::getDepartment).collect(Collectors.toList()));
-
- */
-       /* System.out.printf("Average age of male and female"
-        + employeeList.stream().collect(Collectors.groupingBy(employee -> employee.getGender(),Collectors.averagingInt(employee->employee.getAge())))
-        );
-
-        */
-
-        /*System.out.printf("Highest paid" +
-                employeeList.stream().collect(Collectors.maxBy(Comparator.comparingDouble(employee->employee.getSalary()))));
-
-         */
+        Map<String, List<Employee>> collect = employeeList.stream().collect(Collectors.groupingBy(Employee::getGender));
+        System.out.println("Male and Female employees"+ collect);
 
     }
 
