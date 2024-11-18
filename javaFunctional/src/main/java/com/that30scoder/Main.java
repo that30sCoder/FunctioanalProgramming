@@ -9,11 +9,13 @@ import static com.that30scoder.Main.Gender.*;
 public class Main {
     public static void main(String[] args) {
         //System.out.println("Hello world!");
+        //Test change
         List<Person> people = List.of(
                 new Person("JOHN", MALE),
                 new Person("Maria", FEMALE),
                 new Person("Aisha", FEMALE),
                 new Person("Alex", MALE)
+
         );
 
 
